@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="gwt-user">
+    <CLASSES>
+      <root url="jar://D:/project/OSBB_WEB_trunk/APPLICATION/Lib/gwt-2.6.0/gwt-user.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/project/OSBB_WEB_trunk/APPLICATION/Lib/gwt-2.6.0/gwt-user.jar!/" />
+    </SOURCES>
+  </library>
+</component>

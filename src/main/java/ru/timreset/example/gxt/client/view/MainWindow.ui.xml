@@ -1,0 +1,44 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:form='urn:import:com.sencha.gxt.widget.core.client.form'
+             xmlns:toolbar='urn:import:com.sencha.gxt.widget.core.client.toolbar'
+             xmlns:menu='urn:import:com.sencha.gxt.widget.core.client.menu'
+             xmlns:button='urn:import:com.sencha.gxt.widget.core.client.button'
+             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'
+             xmlns:grid='urn:import:com.sencha.gxt.widget.core.client.grid'
+             xmlns:core="urn:import:com.sencha.gxt.widget.core.client">
+
+    <ui:with field="messages" type="ru.timreset.example.gxt.client.i18n.MainWindow"/>
+
+    <ui:with type="ru.timreset.example.gxt.client.resource.Resources" field="res"/>
+
+
+    <container:VerticalLayoutContainer>
+
+        <container:child>
+            <g:HTMLPanel>
+                <div>
+                    <g:Label ui:field="studentsList" text="{messages.studentsList}"
+                             styleName="{res.styles.menuClickable}"/>
+                    <g:Label ui:field="groupsList" text="{messages.groupsList}" styleName="{res.styles.menuClickable}"/>
+                </div>
+            </g:HTMLPanel>
+        </container:child>
+
+        <!--        <container:child>
+                    <container:HorizontalLayoutContainer>
+                        <container:child>
+                            <g:Label ui:field="studentsList" text="{messages.studentsList}"/>
+                        </container:child>
+                        <container:child>
+                            <g:Label ui:field="groupsList" text="{messages.groupsList}"/>
+                        </container:child>
+                    </container:HorizontalLayoutContainer>
+                </container:child>-->
+
+        <container:child>
+            <core:ContentPanel ui:field="container"/>
+        </container:child>
+
+    </container:VerticalLayoutContainer>
+</ui:UiBinder>

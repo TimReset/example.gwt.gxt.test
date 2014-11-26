@@ -1,0 +1,20 @@
+/*Все стили должны быть определены в интерфейсе, иначе будет ошибка компиляции!*/
+
+.menuClickable {
+    color: #08628C;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline;
+}
+
+.menuNotClickable {
+    color: #000000;
+    cursor: default;
+    display: inline;
+}
+
+.title {
+    color: green;
+    cursor: default;
+    display: inline;
+}

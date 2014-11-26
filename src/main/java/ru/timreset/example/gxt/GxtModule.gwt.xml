@@ -1,0 +1,32 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="GxtModule">
+
+  <inherits name='com.google.gwt.user.User'/>
+
+  <entry-point class='ru.timreset.example.gxt.client.GxtModule'/>
+
+  <inherits name='com.google.gwt.i18n.I18N'/>
+  <inherits name="com.google.gwt.i18n.CldrLocales"/>
+
+  <extend-property name="locale" values="en_US"/>
+  <extend-property name="locale" values="ru_RU"/>
+  <set-property name="locale" value="en_US,ru_RU"/>
+
+  <!-- Inherit the core Web Toolkit stuff. -->
+
+  <inherits name='com.google.gwt.activity.Activity'/>
+  <inherits name='com.google.gwt.place.Place'/>
+  <inherits name="com.google.gwt.inject.Inject"/>
+  
+  <inherits name='com.sencha.gxt.ui.GXT'/>
+
+  <inherits name="com.google.gwt.logging.Logging"/>
+  <set-property name="gwt.logging.popupHandler" value="DISABLED"/>
+  
+  <!--Пакет с исходным кодом только для клиента.-->
+  <source path='client'/>
+  <!--Пакет с общим исходным кодом для клиента и сервера.-->
+  <source path='shared'/>
+  
+</module>

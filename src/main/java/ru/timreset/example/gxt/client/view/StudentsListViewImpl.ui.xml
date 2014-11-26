@@ -1,0 +1,65 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:form='urn:import:com.sencha.gxt.widget.core.client.form'
+             xmlns:toolbar='urn:import:com.sencha.gxt.widget.core.client.toolbar'
+             xmlns:button='urn:import:com.sencha.gxt.widget.core.client.button'
+             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'
+             xmlns:grid='urn:import:com.sencha.gxt.widget.core.client.grid'>
+
+    <ui:with type="ru.timreset.example.gxt.client.resource.Resources" field="res"/>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="toolBarLayoutData">
+        <ui:attributes width="1" height="-1"/>
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="gridLayoutData">
+        <ui:attributes width="-1" height="-1"/>
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="margins0050">
+        <ui:attributes top="0" right="0" bottom="5" left="0"/>
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BoxLayoutContainer.BoxLayoutData" field="boxLayoutData">
+        <ui:attributes margins="{margins0050}"/>
+    </ui:with>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.ColumnModel" field="cm"/>
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.CheckBoxSelectionModel" field="sm"/>
+    <ui:with type="com.sencha.gxt.widget.core.client.grid.GridView" field="view">
+        <ui:attributes stripeRows="true" forceFit="true"/>
+    </ui:with>
+    <ui:with type="com.sencha.gxt.data.shared.ListStore" field="store"/>
+    <ui:with type="com.sencha.gxt.data.shared.loader.PagingLoader" field="loader"/>
+
+    <!--Локализация-->
+    <ui:with field="messages" type="ru.timreset.example.gxt.client.i18n.student.StudentsList"/>
+
+    <container:VerticalLayoutContainer>
+
+        <container:child layoutData="{toolBarLayoutData}">
+            <toolbar:ToolBar>
+                <button:TextButton ui:field="create" text="{messages.createStudent}"/>
+                <button:TextButton ui:field="select" text="{messages.selectStudent}"/>
+            </toolbar:ToolBar>
+        </container:child>
+
+        <container:child layoutData="{gridLayoutData}">
+            <grid:Grid ui:field="grid" cm="{cm}" store="{store}" view="{view}" borders="false"
+                       selectionModel="{sm}" loadMask="true" loader="{loader}"
+                       addStyleNames="padding-bottom"/>
+        </container:child>
+
+        <container:child layoutData="{toolBarLayoutData}">
+            <container:VBoxLayoutContainer vBoxLayoutAlign="CENTER" pack="END" addStyleNames="grid-panel">
+                <container:child layoutData="{boxLayoutData}">
+                    <toolbar:PagingToolBar pageSize="10" ui:field="toolbar"
+                                           addStyleNames="gridToolBar"/>
+                </container:child>
+            </container:VBoxLayoutContainer>
+        </container:child>
+
+    </container:VerticalLayoutContainer>
+</ui:UiBinder>
