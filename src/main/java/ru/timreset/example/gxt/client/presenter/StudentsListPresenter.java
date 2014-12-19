@@ -25,10 +25,16 @@ public interface StudentsListPresenter extends BasePresenter<StudentsListPresent
     void onCreateStudent();
 
     enum Mode {
+        /**
+         * Список Студентов.
+         */
         LIST,
+        /**
+         * Выбор Студента.
+         */
         SELECT
     }
-    
+
     interface View extends BasePresenter.View<StudentsListPresenter> {
 
     }

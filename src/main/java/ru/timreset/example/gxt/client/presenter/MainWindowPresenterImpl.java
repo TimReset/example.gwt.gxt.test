@@ -25,7 +25,7 @@ public class MainWindowPresenterImpl implements MainWindowPresenter {
 
     @Override
     public void goToStudentsList() {
-        placeController.goTo(new StudentsListPlace());
+        placeController.goTo(StudentsListPlace.buildList());
     }
 
     @NotNull

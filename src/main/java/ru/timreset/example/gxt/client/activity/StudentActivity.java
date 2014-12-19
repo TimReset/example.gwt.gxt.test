@@ -8,7 +8,10 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import ru.timreset.example.gxt.client.event.student.SaveStudentCompleteEvent;
+import ru.timreset.example.gxt.client.event.student.SaveStudentCompleteEventHandler;
 import ru.timreset.example.gxt.client.place.StudentPlace;
+import ru.timreset.example.gxt.client.place.StudentsListPlace;
 import ru.timreset.example.gxt.client.presenter.StudentPresenter;
 
 public class StudentActivity extends AbstractActivity implements BaseActivity<StudentPlace> {
@@ -66,6 +69,12 @@ public class StudentActivity extends AbstractActivity implements BaseActivity<St
             }
         });*/
 
+        eventBus.addHandler(SaveStudentCompleteEvent.TYPE, new SaveStudentCompleteEventHandler() {
+            @Override
+            public void onSaveStudentComplete(SaveStudentCompleteEvent event) {
+                placeController.goTo(StudentsListPlace.buildList());
+            }
+        });
 
         // Инициализируем presenter с callback'ом. Callback вызовется, когда инициализация корректно пройдёт.
         studentPresenter.init(mode, studentId, eventBus, new Command() {

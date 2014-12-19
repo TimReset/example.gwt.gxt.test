@@ -52,6 +52,7 @@ public class StudentPresenterImpl implements StudentPresenter {
                 }
             });
         } else {
+            view.setStudent(new Student());
             onReady.execute();
         }
 

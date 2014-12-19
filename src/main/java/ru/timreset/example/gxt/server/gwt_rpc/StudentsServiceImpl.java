@@ -33,13 +33,13 @@ public class StudentsServiceImpl extends BaseRemoteService implements StudentsSe
     @NotNull
     @Override
     public PagingLoadResult<Student> getStudents(@NotNull PagingLoadConfig config) {
-        List<Student> students = new ArrayList<>();
-        final int from = config.getOffset() < MAX ? config.getOffset() : MAX;
-        final int to = (config.getOffset() + config.getLimit()) < MAX ? (config.getOffset() + config.getLimit()) : MAX;
+        List<Student> s = new ArrayList<>();
+        final int from = config.getOffset() < students.size() ? config.getOffset() : students.size();
+        final int to = (config.getOffset() + config.getLimit()) < students.size() ? (config.getOffset() + config.getLimit()) : students.size();
         for (int i = from; i < to; i++) {
-            students.add(StudentsServiceImpl.students.get(i));
+            s.add(StudentsServiceImpl.students.get(i));
         }
-        return new PagingLoadResultBean<>(students, MAX, config.getOffset());
+        return new PagingLoadResultBean<>(s, students.size(), config.getOffset());
     }
 
     @NotNull
